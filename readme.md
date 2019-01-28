@@ -1,31 +1,30 @@
                                       Instructions to Run Application
 
 https://colab.research.google.com/drive/1PGbI4Pj-NoGcD0J6ycZS74_IvOhoVuZq
+Click on the Link -> You may have to sign-in with a gmail account if not signed in already.
 
-    Click on the Link -> You may have to sign-in with a gmail account if not signed in already.
+Colaboraty should open, click Runtime -> Run All
 
-    Colaboraty should open, click Runtime -> Run All
-
-    Allow 30 seconds for all downloads and scripts to run -> Project should be running
+Allow 30 seconds for all downloads and scripts to run -> Project should be running
 
                                    Instructions to Run Application on Docker-Compose
                            (Assuming that Docker is already installed on a Linux type OS)
 
-    Download zip file from here: https://www.dropbox.com/s/92fwq06m974vpxp/docker.zip?dl=0 and unzip to folder in directory, which should default to 'Docker', if not paste the contents of the zip file into a folder named "Docker" or whatever you want.
+Download zip file from here: https://www.dropbox.com/s/92fwq06m974vpxp/docker.zip?dl=0 and unzip to folder in directory, which should default to 'Docker', if not paste the contents of the zip file into a folder named "Docker" or whatever you want.
 
-    CD into the 'Docker' folder on terminal or whatever folder you created in step 1)
+CD into the 'Docker' folder on terminal or whatever folder you created in step 1)
 
-    Edit the docker-compose file, under 'volumes', change the working directory before the ":", specify locally on your computer - can be any path, where to map the current working directory to for your Jupyter projects.
+Edit the docker-compose file, under 'volumes', change the working directory before the ":", specify locally on your computer - can be any path, where to map the current working directory to for your Jupyter projects.
 
-    On terminal, once you are cd'd into the folder with all the docker files inside it, type -> sudo docker-compose up (Wait 5 minutes for the images to be downloaded from docker hub and copy the auth token from terminal once docker-compose finishes execution)
+On terminal, once you are cd'd into the folder with all the docker files inside it, type -> sudo docker-compose up (Wait 5 minutes for the images to be downloaded from docker hub and copy the auth token from terminal once docker-compose finishes execution)
 
-    Type localhost:8888 on the browser - login to Jupyter with the auth token from step 4- the working directory specified in Step 3 should show up in Jupyter, load the pandas project into Jupyter, with file extension .ipynmb
+Type localhost:8888 on the browser - login to Jupyter with the auth token from step 4- the working directory specified in Step 3 should show up in Jupyter, load the pandas project into Jupyter, with file extension .ipynmb
 
-    Click Cell -> Run All
+Click Cell -> Run All
 
-    Close docker with Control + C on keyboard, and type docker-compose up if you want to bring it back up again.
+Close docker with Control + C on keyboard, and type docker-compose up if you want to bring it back up again.
 
-                      Architecture and Assumptions about Design and technology tradeoffs
+                       Architecture and Assumptions about Design and technology tradeoffs
 
 -Google Colaboratory running Jupyter Notebook -> Host the application -Numpy and Pandas -> Python Analytics libraries -Matplotlib -> Display a couple graphs (It was not required, but I decided to use it for aesthetic purposes)
 
@@ -61,6 +60,6 @@ I took into account funny characters found in the data, particular in the zip co
 
                                                       Data Sources  
 
-    I was able to source the data from here, https://dev.socrata.com/foundry/data.cityofnewyork.us/fhrw-4uyv - on the site, I was able to filter data for 2017 and export it to CSV. The CSV file, being about 1.2 GB in sized, was downloaded, zipped to 100MB, and stored in dropbox. The application downloads the data set and unzips it upon execution.
+I was able to source the data from here, https://dev.socrata.com/foundry/data.cityofnewyork.us/fhrw-4uyv - on the site, I was able to filter data for 2017 and export it to CSV. The CSV file, being about 1.2 GB in sized, was downloaded, zipped to 100MB, and stored in dropbox. The application downloads the data set and unzips it upon execution.
 
-    I was able to souce the population by zip code data from here: https://blog.splitwise.com/2013/09/18/the-2010-us-census-population-by-zip-code-totally-free/. The CSV file is in the kilobytes, so it was stored into dropbox. The application downloads is upon execution.
+I was able to souce the population by zip code data from here: https://blog.splitwise.com/2013/09/18/the-2010-us-census-population-by-zip-code-totally-free/. The CSV file is in the kilobytes, so it was stored into dropbox. The application downloads is upon execution.
